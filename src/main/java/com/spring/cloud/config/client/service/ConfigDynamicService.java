@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Service
@@ -24,14 +26,19 @@ public class ConfigDynamicService {
     @Value("${message.config}")
     private String config;
 
+    /**
+     * https://elfinlas.github.io/2019/06/25/spring-config-refresh/
+     * RefreshScope
+     */
     public Map<String, Object> getConfig() {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new LinkedHashMap<>();
         map.put("port", port);
         map.put("name", name);
         map.put("dynamic", "dynamic");
         map.put("one", one);
         map.put("two", two);
         map.put("config", config);
+        map.put("time", LocalDateTime.now());
         return map;
     }
 }

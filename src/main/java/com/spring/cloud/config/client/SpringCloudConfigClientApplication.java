@@ -9,7 +9,7 @@ public class SpringCloudConfigClientApplication {
 	/**
 	 * https://madplay.github.io/post/changes-in-spring-cloud-config-from-spring-boot-2-4
 	 * https://multifrontgarden.tistory.com/278
-	 * http://localhost:8080/dynamic
+	 * http://localhost:8080/static
 	 * http://localhost:8080/dynamic
 	 * $ curl -X POST "http://localhost:8089/actuator/refresh"
 	 */
